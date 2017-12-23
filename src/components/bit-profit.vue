@@ -70,12 +70,34 @@
       <div class="row-description">Sum profit</div>
       <div class="sum-profit">{{sum}}</div>
     </div>
+
+    <BitCharts
+      :month1='month1'
+      :month2='month2'
+      :month3='month3'
+      :month4='month4'
+      :month5='month5'
+      :month6='month6'
+      :month7='month7'
+      :month8='month8'
+      :month9='month9'
+      :month10='month10'
+      :month11='month11'
+      :month12='month12'
+      ></BitCharts>
   </div>
 </template>
 
 <script>
+import BitCharts from './bit-charts'
+
 export default {
   name: 'BitProfit',
+
+  components: {
+    BitCharts
+  },
+
   data () {
     return {
       msg: 'Calculate profit.',
