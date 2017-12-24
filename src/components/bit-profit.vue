@@ -68,8 +68,16 @@
       <div class="profit" v-html='month10'></div>
       <div class="profit" v-html='month11'></div>
       <div class="profit" v-html='month12'></div>
+      <div class="row-description">3 month profit</div>
+      <div class="three-month-profit-1" v-html='threeMonthProfit1'></div>
+      <div class="three-month-profit-2" v-html='threeMonthProfit2'></div>
+      <div class="three-month-profit-3" v-html='threeMonthProfit3'></div>
+      <div class="three-month-profit-4" v-html='threeMonthProfit4'></div>
+      <div class="row-description">Half year profit</div>
+      <div class="half-profit-1" v-html='halfProfit1'></div>
+      <div class="half-profit-2" v-html='halfProfit2'></div>
       <div class="row-description">Sum profit</div>
-      <div class="sum-profit">{{sum}}</div>
+      <div class="sum-profit" v-html='sum'></div>
     </div>
 
     <BitCharts
@@ -133,6 +141,30 @@ export default {
   computed: {
     sum() {
       return this.month1 + this.month2 + this.month3 + this.month4 + this.month5 + this.month6 + this.month7 + this.month8 + this.month9 + this.month10 + this.month11 + this.month12;
+    },
+
+    threeMonthProfit1 () {
+      return this.month1 + this.month2 + this.month3;
+    },
+
+    threeMonthProfit2 () {
+      return this.month4 + this.month5 + this.month6;
+    },
+
+    threeMonthProfit3 () {
+      return this.month7 + this.month8 + this.month9;
+    },
+
+    threeMonthProfit4 () {
+      return this.month10 + this.month11 + this.month12;
+    },
+
+    halfProfit1() {
+      return this.month1 + this.month2 + this.month3 + this.month4 + this.month5 + this.month6;
+    },
+
+    halfProfit2() {
+      return this.month7 + this.month8 + this.month9 + this.month10 + this.month11 + this.month12;
     },
 
     sumPower1() {
@@ -300,6 +332,30 @@ h2
       outline: none
       background-color: #4caf50
       color: #fff
+
+
+.half-profit-1
+  grid-column: 2/8
+
+
+.half-profit-2
+  grid-column: 8/14
+
+
+.three-month-profit-1
+  grid-column: 2/5
+
+
+.three-month-profit-2
+  grid-column: 5/8
+
+
+.three-month-profit-3
+  grid-column: 8/11
+
+
+.three-month-profit-4
+  grid-column: 11/14
 
 
 .sum-profit

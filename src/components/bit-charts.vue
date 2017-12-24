@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h1 @click.prevent='drawChart'>{{ msg }}</h1>
+    <h2>{{ msg }}</h2>
     <canvas id="chart" width="602" height="300">{{sum}}</canvas>
   </div>
 </template>
