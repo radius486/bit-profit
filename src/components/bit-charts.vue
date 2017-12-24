@@ -74,18 +74,19 @@ export default {
       ctx.fillText(this.$parent.sum, 10, 30);
       ctx.fillStyle = "#4caf50";
       ctx.font = "14pt Arial";
-      ctx.fillText(this.month1, this.month1 < 1000 ? 12 : 6, h - this.month1/10 - 2);
-      ctx.fillText(this.month2, this.month2 < 1000 ? 62 : 56, h - this.month2/10 - 2);
-      ctx.fillText(this.month3, this.month3 < 1000 ? 112 : 106, h - this.month3/10 - 2);
-      ctx.fillText(this.month4, this.month4 < 1000 ? 162 : 156, h - this.month4/10 - 2);
-      ctx.fillText(this.month5, this.month5 < 1000 ? 212 : 206, h - this.month5/10 - 2);
-      ctx.fillText(this.month6, this.month6 < 1000 ? 262 : 256, h - this.month6/10 - 2);
-      ctx.fillText(this.month7, this.month7 < 1000 ? 312 : 306, h - this.month7/10 - 2);
-      ctx.fillText(this.month8, this.month8 < 1000 ? 362 : 356, h - this.month8/10 - 2);
-      ctx.fillText(this.month9, this.month9 < 1000 ? 412 : 406, h - this.month9/10 - 2);
-      ctx.fillText(this.month10, this.month10 < 1000 ? 462 : 456, h - this.month10/10 - 2);
-      ctx.fillText(this.month11, this.month11 < 1000 ? 512 : 506, h - this.month11/10 - 2);
-      ctx.fillText(this.month12, this.month12 < 1000 ? 562 : 556, h - this.month12/10 - 2);
+      ctx.textAlign = "center";
+      ctx.fillText(this.month1, 26, h - this.month1/10 - 2);
+      ctx.fillText(this.month2, 76, h - this.month2/10 - 2);
+      ctx.fillText(this.month3, 126, h - this.month3/10 - 2);
+      ctx.fillText(this.month4, 176, h - this.month4/10 - 2);
+      ctx.fillText(this.month5, 226, h - this.month5/10 - 2);
+      ctx.fillText(this.month6, 276, h - this.month6/10 - 2);
+      ctx.fillText(this.month7, 326, h - this.month7/10 - 2);
+      ctx.fillText(this.month8, 376, h - this.month8/10 - 2);
+      ctx.fillText(this.month9, 426, h - this.month9/10 - 2);
+      ctx.fillText(this.month10, 476, h - this.month10/10 - 2);
+      ctx.fillText(this.month11, 526, h - this.month11/10 - 2);
+      ctx.fillText(this.month12, 576, h - this.month12/10 - 2);
     },
 
     clearCanvas() {
