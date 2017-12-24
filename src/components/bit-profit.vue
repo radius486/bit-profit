@@ -1,6 +1,7 @@
 <template>
   <div class="wrapper">
     <h1>{{ msg }}</h1>
+    <p class="month-profit"><span>Prifit from 1 TH/s: </span><input type="number" v-model.number='monthProfit'></p>
     <div class="bit-table">
       <div class="row-description">Month</div>
       <div class="month">1</div>
@@ -15,32 +16,32 @@
       <div class="month">10</div>
       <div class="month">11</div>
       <div class="month">12</div>
-      <div class="row-description">Power</div>
-      <div class="power"><input type='number' v-model.number='power1'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power2'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power3'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power4'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power5'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power6'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power7'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power8'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power9'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power10'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power11'>TH/s</div>
-      <div class="power"><input type='number' v-model.number='power12'>TH/s</div>
-      <div class="row-description">Reinvest</div>
+      <div class="row-description">Power TH/s</div>
+      <div class="power"><input type='number' v-model.number='power1'></div>
+      <div class="power"><input type='number' v-model.number='power2'></div>
+      <div class="power"><input type='number' v-model.number='power3'></div>
+      <div class="power"><input type='number' v-model.number='power4'></div>
+      <div class="power"><input type='number' v-model.number='power5'></div>
+      <div class="power"><input type='number' v-model.number='power6'></div>
+      <div class="power"><input type='number' v-model.number='power7'></div>
+      <div class="power"><input type='number' v-model.number='power8'></div>
+      <div class="power"><input type='number' v-model.number='power9'></div>
+      <div class="power"><input type='number' v-model.number='power10'></div>
+      <div class="power"><input type='number' v-model.number='power11'></div>
+      <div class="power"><input type='number' v-model.number='power12'></div>
+      <div class="row-description">Reinvest TH/s</div>
       <div>-</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest2'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest3'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest4'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest5'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest6'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest7'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest8'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest9'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest10'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest11'>TH/s</div>
-      <div class="reinvest"><input type='number' v-model.number='reinvest12'>TH/s</div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest2'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest3'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest4'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest5'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest6'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest7'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest8'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest9'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest10'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest11'></div>
+      <div class="reinvest"><input type='number' v-model.number='reinvest12'></div>
       <div class="row-description">Sum power</div>
       <div class="sum-power" v-html='sumPower1'></div>
       <div class="sum-power" v-html='sumPower2'></div>
@@ -101,6 +102,7 @@ export default {
   data () {
     return {
       msg: 'Calculate profit.',
+      monthProfit: 80,
       power1: 4,
       power2: 4,
       power3: 4,
@@ -182,51 +184,51 @@ export default {
     },
 
     month1 () {
-      return this.sumPower1 * 80 - this.reinvest2 * 150;
+      return this.sumPower1 * this.monthProfit - this.reinvest2 * 150;
     },
 
     month2 () {
-      return this.sumPower2 * 80 - this.reinvest3 * 150;
+      return this.sumPower2 * this.monthProfit - this.reinvest3 * 150;
     },
 
     month3 () {
-      return this.sumPower3 * 80 - this.reinvest4 * 150;
+      return this.sumPower3 * this.monthProfit - this.reinvest4 * 150;
     },
 
     month4 () {
-      return this.sumPower4 * 80 - this.reinvest5 * 150;
+      return this.sumPower4 * this.monthProfit - this.reinvest5 * 150;
     },
 
     month5 () {
-      return this.sumPower5 * 80 - this.reinvest6 * 150;
+      return this.sumPower5 * this.monthProfit - this.reinvest6 * 150;
     },
 
     month6 () {
-      return this.sumPower6 * 80 - this.reinvest7 * 150;
+      return this.sumPower6 * this.monthProfit - this.reinvest7 * 150;
     },
 
     month7 () {
-      return this.sumPower7 * 80 - this.reinvest8 * 150;
+      return this.sumPower7 * this.monthProfit - this.reinvest8 * 150;
     },
 
     month8 () {
-      return this.sumPower8 * 80 - this.reinvest9 * 150;
+      return this.sumPower8 * this.monthProfit - this.reinvest9 * 150;
     },
 
     month9 () {
-      return this.sumPower9 * 80 - this.reinvest10 * 150;
+      return this.sumPower9 * this.monthProfit - this.reinvest10 * 150;
     },
 
     month10 () {
-      return this.sumPower10 * 80 - this.reinvest11 * 150;
+      return this.sumPower10 * this.monthProfit - this.reinvest11 * 150;
     },
 
     month11 () {
-      return this.sumPower11 * 80 - this.reinvest12 * 150;
+      return this.sumPower11 * this.monthProfit - this.reinvest12 * 150;
     },
 
     month12 () {
-      return this.sumPower12 * 80;
+      return this.sumPower12 * this.monthProfit;
     }
   }
 }
@@ -239,6 +241,22 @@ h2
   font-weight: normal
   color: #f0f
 
+.month-profit
+  font-size: 16px
+  text-align: left
+
+  input
+    border: none
+    font-size: 16px
+    width: 50px
+    padding-left: 5px
+
+    &:focus
+      outline: none
+      background-color: #4caf50
+      color: #fff
+
+
 .wrapper
   max-width: 1200px
   margin: 0 auto
@@ -247,7 +265,7 @@ h2
 
 .bit-table
   display: grid
-  grid-template-columns: repeat(13, minmax(50px, 1fr))
+  grid-template-columns: 200px repeat(12, minmax(50px, 1fr))
   grid-template-rows: repeat(5, 30px)
   grid-gap: 2px
   border: 2px solid #000
@@ -257,6 +275,10 @@ h2
     line-height: 30px
     background-color: #fff
 
+
+.row-description
+  //width: 200px
+
 .month
 
 .power,
@@ -265,18 +287,19 @@ h2
   align-items: center
 
   input
-    width: 50%
+    width: 100%
     height: 100%
     border: none
-    text-align: right
+    text-align: center
     font-size: 16px
     font-weight: 300
     box-sizing: border-box
-    padding: 0 0 2px
+    padding: 0 0 2px 12px
 
-    &:hover,
     &:focus
       outline: none
+      background-color: #4caf50
+      color: #fff
 
 
 .sum-profit
