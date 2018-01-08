@@ -2,6 +2,7 @@
   <div class="wrapper">
     <h1>{{ msg }}</h1>
     <p class="month-profit"><span>Prifit from 1 TH/s: </span><input type="number" v-model.number='monthProfit'></p>
+    <p class="month-profit"><span>1 TH/s price: </span><input type="number" v-model.number='thPrice'></p>
     <div class="bit-table">
       <div class="row-description">Month</div>
       <div class="month">1</div>
@@ -111,6 +112,7 @@ export default {
     return {
       msg: 'Calculate profit.',
       monthProfit: 80,
+      thPrice: 150,
       power1: 4,
       power2: 4,
       power3: 4,
@@ -216,47 +218,47 @@ export default {
     },
 
     month1 () {
-      return this.sumPower1 * this.monthProfit - this.reinvest2 * 150;
+      return this.sumPower1 * this.monthProfit - this.reinvest2 * this.thPrice;
     },
 
     month2 () {
-      return this.sumPower2 * this.monthProfit - this.reinvest3 * 150;
+      return this.sumPower2 * this.monthProfit - this.reinvest3 * this.thPrice;
     },
 
     month3 () {
-      return this.sumPower3 * this.monthProfit - this.reinvest4 * 150;
+      return this.sumPower3 * this.monthProfit - this.reinvest4 * this.thPrice;
     },
 
     month4 () {
-      return this.sumPower4 * this.monthProfit - this.reinvest5 * 150;
+      return this.sumPower4 * this.monthProfit - this.reinvest5 * this.thPrice;
     },
 
     month5 () {
-      return this.sumPower5 * this.monthProfit - this.reinvest6 * 150;
+      return this.sumPower5 * this.monthProfit - this.reinvest6 * this.thPrice;
     },
 
     month6 () {
-      return this.sumPower6 * this.monthProfit - this.reinvest7 * 150;
+      return this.sumPower6 * this.monthProfit - this.reinvest7 * this.thPrice;
     },
 
     month7 () {
-      return this.sumPower7 * this.monthProfit - this.reinvest8 * 150;
+      return this.sumPower7 * this.monthProfit - this.reinvest8 * this.thPrice;
     },
 
     month8 () {
-      return this.sumPower8 * this.monthProfit - this.reinvest9 * 150;
+      return this.sumPower8 * this.monthProfit - this.reinvest9 * this.thPrice;
     },
 
     month9 () {
-      return this.sumPower9 * this.monthProfit - this.reinvest10 * 150;
+      return this.sumPower9 * this.monthProfit - this.reinvest10 * this.thPrice;
     },
 
     month10 () {
-      return this.sumPower10 * this.monthProfit - this.reinvest11 * 150;
+      return this.sumPower10 * this.monthProfit - this.reinvest11 * this.thPrice;
     },
 
     month11 () {
-      return this.sumPower11 * this.monthProfit - this.reinvest12 * 150;
+      return this.sumPower11 * this.monthProfit - this.reinvest12 * this.thPrice;
     },
 
     month12 () {
