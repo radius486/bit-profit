@@ -5,12 +5,12 @@
     <p class="month-profit"><span>1 TH/s price: </span><input type="number" v-model.number='thPrice'></p>
     <div class="bit-table">
       <div class="row-description">Month</div>
-      <div class="month" v-for='(item, index) in powers' :key='item.id'>{{index + 1}}</div>
+      <div class="month" v-for='(item, index) in monthes' :key='item.id'>{{index + 1}}</div>
       <div class="row-description">Power TH/s</div>
-      <div class="power" v-for='item in powers'><input type='number' v-model.number='item.power'></div>
+      <div class="power" v-for='item in monthes'><input type='number' v-model.number='item.power'></div>
       <div class="row-description">Reinvest TH/s</div>
       <div>-</div>
-      <div class="reinvest" v-for='(item, index) in powers' v-if='index != 0'><input type='number' v-model.number='item.reinvest'></div>
+      <div class="reinvest" v-for='(item, index) in monthes' v-if='index != 0'><input type='number' v-model.number='item.reinvest'></div>
       <div class="row-description">Sum power</div>
       <div class="sum-power" v-html='sumPower1'></div>
       <div class="sum-power" v-html='sumPower2'></div>
@@ -81,7 +81,7 @@ export default {
       msg: 'Calculate profit.',
       monthProfit: 80,
       thPrice: 150,
-      powers: [
+      monthes: [
         {power: 4, reinvest: 0},
         {power: 4, reinvest: 0},
         {power: 4, reinvest: 0},
@@ -128,95 +128,95 @@ export default {
     },
 
     sumPower1() {
-      return this.powers[0].power + this.powers[0].reinvest;
+      return this.monthes[0].power + this.monthes[0].reinvest;
     },
 
     sumPower2() {
-      return this.powers[1].power + this.powers[0].reinvest + this.powers[1].reinvest;
+      return this.monthes[1].power + this.monthes[0].reinvest + this.monthes[1].reinvest;
     },
 
     sumPower3() {
-      return this.powers[2].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest;
+      return this.monthes[2].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest;
     },
 
     sumPower4() {
-      return this.powers[3].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest;
+      return this.monthes[3].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest;
     },
 
     sumPower5() {
-      return this.powers[4].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest;
+      return this.monthes[4].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest;
     },
 
     sumPower6() {
-      return this.powers[5].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest;
+      return this.monthes[5].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest;
     },
 
     sumPower7() {
-      return this.powers[6].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest + this.powers[6].reinvest;
+      return this.monthes[6].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest + this.monthes[6].reinvest;
     },
 
     sumPower8() {
-      return this.powers[7].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest + this.powers[6].reinvest + this.powers[7].reinvest;
+      return this.monthes[7].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest + this.monthes[6].reinvest + this.monthes[7].reinvest;
     },
 
     sumPower9() {
-      return this.powers[8].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest + this.powers[6].reinvest + this.powers[7].reinvest + this.powers[8].reinvest;
+      return this.monthes[8].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest + this.monthes[6].reinvest + this.monthes[7].reinvest + this.monthes[8].reinvest;
     },
 
     sumPower10() {
-      return this.powers[9].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest + this.powers[6].reinvest + this.powers[7].reinvest + this.powers[8].reinvest + this.powers[9].reinvest;
+      return this.monthes[9].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest + this.monthes[6].reinvest + this.monthes[7].reinvest + this.monthes[8].reinvest + this.monthes[9].reinvest;
     },
 
     sumPower11() {
-      return this.powers[10].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest + this.powers[6].reinvest + this.powers[7].reinvest + this.powers[8].reinvest + this.powers[9].reinvest + this.powers[10].reinvest;
+      return this.monthes[10].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest + this.monthes[6].reinvest + this.monthes[7].reinvest + this.monthes[8].reinvest + this.monthes[9].reinvest + this.monthes[10].reinvest;
     },
 
     sumPower12() {
-      return this.powers[11].power + this.powers[0].reinvest + this.powers[1].reinvest + this.powers[2].reinvest + this.powers[3].reinvest + this.powers[4].reinvest + this.powers[5].reinvest + this.powers[6].reinvest + this.powers[7].reinvest + this.powers[8].reinvest + this.powers[9].reinvest + this.powers[10].reinvest + this.powers[11].reinvest;
+      return this.monthes[11].power + this.monthes[0].reinvest + this.monthes[1].reinvest + this.monthes[2].reinvest + this.monthes[3].reinvest + this.monthes[4].reinvest + this.monthes[5].reinvest + this.monthes[6].reinvest + this.monthes[7].reinvest + this.monthes[8].reinvest + this.monthes[9].reinvest + this.monthes[10].reinvest + this.monthes[11].reinvest;
     },
 
     month1 () {
-      return this.sumPower1 * this.monthProfit - this.powers[1].reinvest * this.thPrice;
+      return this.sumPower1 * this.monthProfit - this.monthes[1].reinvest * this.thPrice;
     },
 
     month2 () {
-      return this.sumPower2 * this.monthProfit - this.powers[2].reinvest * this.thPrice;
+      return this.sumPower2 * this.monthProfit - this.monthes[2].reinvest * this.thPrice;
     },
 
     month3 () {
-      return this.sumPower3 * this.monthProfit - this.powers[3].reinvest * this.thPrice;
+      return this.sumPower3 * this.monthProfit - this.monthes[3].reinvest * this.thPrice;
     },
 
     month4 () {
-      return this.sumPower4 * this.monthProfit - this.powers[4].reinvest * this.thPrice;
+      return this.sumPower4 * this.monthProfit - this.monthes[4].reinvest * this.thPrice;
     },
 
     month5 () {
-      return this.sumPower5 * this.monthProfit - this.powers[5].reinvest * this.thPrice;
+      return this.sumPower5 * this.monthProfit - this.monthes[5].reinvest * this.thPrice;
     },
 
     month6 () {
-      return this.sumPower6 * this.monthProfit - this.powers[6].reinvest * this.thPrice;
+      return this.sumPower6 * this.monthProfit - this.monthes[6].reinvest * this.thPrice;
     },
 
     month7 () {
-      return this.sumPower7 * this.monthProfit - this.powers[7].reinvest * this.thPrice;
+      return this.sumPower7 * this.monthProfit - this.monthes[7].reinvest * this.thPrice;
     },
 
     month8 () {
-      return this.sumPower8 * this.monthProfit - this.powers[8].reinvest * this.thPrice;
+      return this.sumPower8 * this.monthProfit - this.monthes[8].reinvest * this.thPrice;
     },
 
     month9 () {
-      return this.sumPower9 * this.monthProfit - this.powers[9].reinvest * this.thPrice;
+      return this.sumPower9 * this.monthProfit - this.monthes[9].reinvest * this.thPrice;
     },
 
     month10 () {
-      return this.sumPower10 * this.monthProfit - this.powers[10].reinvest * this.thPrice;
+      return this.sumPower10 * this.monthProfit - this.monthes[10].reinvest * this.thPrice;
     },
 
     month11 () {
-      return this.sumPower11 * this.monthProfit - this.powers[11].reinvest * this.thPrice;
+      return this.sumPower11 * this.monthProfit - this.monthes[11].reinvest * this.thPrice;
     },
 
     month12 () {
